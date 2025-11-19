@@ -1,3 +1,4 @@
+name: Build Node.js Application
 on: push 
 jobs: 
     build-node:

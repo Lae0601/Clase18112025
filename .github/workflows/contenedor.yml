@@ -3,12 +3,13 @@ name: Workflow con Contenedor
 on:
   push:
     branches:
-      - test_1   
+      - test_1   # o la rama que quieras usar
+
 jobs:
   run-in-container:
     runs-on: ubuntu-latest
     container:
-      image: python:3.10   
+      image: node:18 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
@@ -18,4 +19,4 @@ jobs:
           echo "Impresión 1 desde contenedor"
           echo "Impresión 2 desde contenedor"
           echo "Impresión 3 desde contenedor"
-          python --version   # Ejemplo: usar Python dentro del contenedor
+          node app.js   
