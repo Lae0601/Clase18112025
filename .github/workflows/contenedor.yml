@@ -1,0 +1,21 @@
+name: Workflow con Contenedor
+
+on:
+  push:
+    branches:
+      - test_1   
+jobs:
+  run-in-container:
+    runs-on: ubuntu-latest
+    container:
+      image: python:3.10   
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Ejecutar acción dentro del contenedor
+        run: |
+          echo "Impresión 1 desde contenedor"
+          echo "Impresión 2 desde contenedor"
+          echo "Impresión 3 desde contenedor"
+          python --version   # Ejemplo: usar Python dentro del contenedor
